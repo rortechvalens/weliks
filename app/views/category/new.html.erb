@@ -1,0 +1,17 @@
+<%= form_for @categry, :as => :category, :url => create_category_path, :html => {:multipart => true}, :method => "post" do |f|  %>
+<p>
+<label>Category Name</label><br/>
+<%= f.text_field :category_name,:placeholder => "Category Name"  %>
+</p>
+
+
+<p>
+<label>Category Image</label><br/>
+<%= f.file_field :category_image%>
+</p>
+
+<p>
+<%= f.submit :Submit  %>
+</p>
+
+<% end %>

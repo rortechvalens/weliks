@@ -1,0 +1,27 @@
+<h1>Add User Category</h1>
+
+<%= form_for @user_category,:as => :user_category, :url => user_category_create_path, :method => "post" do |f| %>
+
+<p>
+  <%= select(:user_category, :user_id, @users.collect {|p| [p.name,p.id]  }, {:prompt => 'Select User'})%>
+</p>
+
+
+<p>
+  <%#= select(:user_category, :master_category_id, @category.collect {|p| [p.category_name,p.id]  }, {:prompt => 'Select Master_category'})%>
+</p>
+<p>
+  <%#= select(:user_category, :master_category_id, @category.collect {|p| [p.category_name,p.id]  }, {:prompt => 'Select Master_category'})%>
+</p>
+
+
+
+
+
+
+  
+
+
+  <%= select :user_category,:master_category_id, @category.collect {|x| [x.category_name, x.id]}, {}, :multiple => true %>
+  <%= f.submit :Submit %>
+<% end %>
